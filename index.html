@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div class="mask" id="mask">
+		<div class="scale"><span class="num" id="num">0</span>%</div>
+	</div>
+	<div class="swiper-container swiper-container-v">
+		<div class="swiper-wrapper">
+			<!-- 首页 -->
+			<div class="swiper-slide index-page">
+				<video src="img/f9cb29b37c231abcbeec714bb6d4ff76.mp4" controls="controls"></video>
+				<img class="bg" src="" data-src="img/index-bg.png" alt="">
+				<img class="next-icon animated bounce" src="" data-src="img/ic_next.png" alt="">
+				<img class="ani index-title" swiper-animate-effect="rubberBand" swiper-animate-duration="1s" swiper-animate-delay="0s" src="" data-src="img/index-title.png" alt="">
+			</div>
+			<!-- 内饰 -->
+			<div class="swiper-slide">
+				<div class="swiper-container swiper-container-scrollbar">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<!-- 背景 -->
+							<img class="bg" src="" data-src="img/scrollbar/2008H5B.png" alt="">
+							<!-- 引擎文字 -->
+							<div class="ani engine-title" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0s">
+								<img src="" data-src="img/scrollbar/engine/title.png" alt="">
+							</div>
+							<div class="ani motor-word" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+								<img src="" data-src="img/scrollbar/engine/motor-word.png" alt="">
+							</div>
+							<div class="ani gearbox-word" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+								<img src="" data-src="img/scrollbar/engine/gearbox-word.png" alt="">
+							</div>
+							<!-- 造型文字 -->
+							<div class="ani model-title" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0s">
+								<img src="" data-src="img/scrollbar/model/title.png" alt="">
+							</div>
+							<div class="ani grille-word" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0s">
+								<img src="" data-src="img/scrollbar/model/grille-word.png" alt="">
+							</div>
+							<div class="ani headlight-word" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="0s">
+								<img src="" data-src="img/scrollbar/model/headlight-word.png" alt="">
+							</div>
+							<div class="ani taillight-word" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0s">
+								<img src="" data-src="img/scrollbar/model/taillight-word.png" alt="">
+							</div>
+							<div class="ani rack-word" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="0s">
+								<img src="" data-src="img/scrollbar/model/rack-word.png" alt="">
+							</div>
+							<div class="ani hub-word" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0s">
+								<img src="" data-src="img/scrollbar/model/hub-word.png" alt="">
+							</div>
+							<!-- 天幕 -->
+							<div class="ani tent-title" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0s">
+								<img src="" data-src="img/scrollbar/tent/title.png" alt="">
+							</div>
+							<div class="ani atmosphere-word" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="0s">
+								<img src="" data-src="img/scrollbar/tent/atmosphere-word.png" alt="">
+							</div>
+							<div class="ani sunshade-word" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0s">
+								<img src="" data-src="img/scrollbar/tent/sunshade-word.png" alt="">
+							</div>
+							<div class="ani skylight-word" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="0s">
+								<img src="" data-src="img/scrollbar/tent/skylight-word.png" alt="">
+							</div>
+							<!-- 促销 -->
+							<div class="ani down-payment" swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="0s">
+								<img src="" data-src="img/scrollbar/sales/down-payment.png" alt="">
+							</div>
+							<div class="ani day-payment" swiper-animate-effect="flash" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+								<img src="" data-src="img/scrollbar/sales/day-payment.png" alt="">
+							</div>
+							<!-- 按钮 -->
+							<div class="next-btn" id="next_btn"></div>
+							<div class="download-btn"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 预约页面 -->
+	<div class="order-page" id="order_page">
+		<img class="bg" src="" data-src="img/order-bg.png" alt="">
+		<div class="return-btn" id="return_btn"></div>
+		<form action="">
+			<input class="name-input" type="text" placeholder="姓名">
+			<input class="phone-input" type="number" placeholder="电话号码">
+			<select class="province-select" name="" id="">
+				<option value="-1" selected disabled>请选择省份</option>
+				<option value="">广东</option>
+				<option value="">北京</option>
+				<option value="">上海</option>
+			</select>
+			<select class="city-select" name="" id="">
+				<option value="-1" selected disabled>请选择城市</option>
+				<option value="">汕头</option>
+				<option value="">广州</option>
+				<option value="">深圳</option>
+			</select>
+			<select class="dealer-select" name="" id="">
+				<option value="-1" selected disabled>请选择经销商</option>
+				<option value="">XXX经销商</option>
+				<option value="">YYY经销商</option>
+			</select>
+		</form>
+		<div class="check" id="check_btn"><img src="" data-src="img/icon_gou.png" alt=""></div>
+		<div class="submit-btn"></div>
+	</div>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/swiper.animate1.0.3.min.js"></script>
+<script src="js/index.js"></script>
+</html>

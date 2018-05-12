@@ -1,0 +1,251 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+html, body{
+    height: 100%;
+    font-size: 16px;
+}
+.mask,.swiper-container{
+    width: 100%;
+    height: 100%;
+}
+.mask{
+  background-color: #000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  line-height: 100%;
+  color: #fff;
+  z-index: 999;
+  font-size: 2rem;
+}
+.scale{
+  width: 100%;
+  height: 2rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+}
+.index-page video{
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}
+.index-page .bg{
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+}
+.index-page .index-title{
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 15rem;
+  z-index: 2;
+}
+.index-page .next-icon{
+  width: 10%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.5rem;
+  margin: auto;
+  animation-iteration-count:infinite;
+  -webkit-animation-iteration-count:infinite;
+  z-index: 2;
+}
+.swiper-slide img{
+  width: 100%;
+  display: block;
+}
+.swiper-container-scrollbar .swiper-slide{
+    height: auto;
+    position: relative;
+}
+.swiper-container-scrollbar .engine-title{
+  position: absolute;
+  left: 0;
+  top: 1.3%;
+}
+.swiper-container-scrollbar .motor-word{
+  position: absolute;
+  left: 0;
+  top: 8.1%;
+}
+.swiper-container-scrollbar .gearbox-word{
+  position: absolute;
+  left: 0;
+  top: 13%;
+}
+.swiper-container-scrollbar .model-title{
+  position: absolute;
+  left: 0;
+  top: 19.6%;
+  display: none;
+}
+.swiper-container-scrollbar .grille-word{
+  position: absolute;
+  left: 0;
+  top: 24%;
+  display: none;
+}
+.swiper-container-scrollbar .headlight-word{
+  position: absolute;
+  left: 0;
+  top: 33.6%;
+  display: none;
+}
+.swiper-container-scrollbar .taillight-word{
+  position: absolute;
+  left: 0;
+  top: 38.5%;
+  display: none;
+}
+.swiper-container-scrollbar .rack-word{
+  position: absolute;
+  left: 0;
+  top: 44.5%;
+  display: none;
+}
+.swiper-container-scrollbar .hub-word{
+  position: absolute;
+  left: 0;
+  top: 48.7%;
+  display: none;
+}
+.swiper-container-scrollbar .tent-title{
+  position: absolute;
+  left: 0;
+  top: 52.6%;
+  display: none;
+}
+.swiper-container-scrollbar .atmosphere-word{
+  position: absolute;
+  left: 0;
+  top: 62.3%;
+  display: none;
+}
+.swiper-container-scrollbar .sunshade-word{
+  position: absolute;
+  left: 0;
+  top: 68%;
+  display: none;
+}
+.swiper-container-scrollbar .skylight-word{
+  position: absolute;
+  left: 0;
+  top: 71.5%;
+  display: none;
+}
+.swiper-container-scrollbar .down-payment{
+  position: absolute;
+  left: 0;
+  top: 77.5%;
+  display: none;
+}
+.swiper-container-scrollbar .day-payment{
+  position: absolute;
+  left: 0;
+  top: 80.6%;
+  display: none;
+}
+.swiper-container-scrollbar .next-btn{
+  width: 28%;
+  height: 3rem;
+  position: absolute;
+  left: 12%;
+  bottom: 2.5%;
+}
+.swiper-container-scrollbar .download-btn{
+  width: 34%;
+  height: 3rem;
+  position: absolute;
+  right: 12%;
+  bottom: 2.5%;
+}
+.order-page{
+  width: 100%;
+  height: auto;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+  z-index: 999;
+}
+.order-page .return-btn{
+  width: 11%;
+  height: 3rem;
+  position: absolute;
+  top: 3%;
+  right: 2rem;
+}
+.order-page .submit-btn{
+  width: 76%;
+  height: 3rem;
+  position: absolute;
+  top: 69%;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+.order-page img{
+  width: 100%;
+  display: block;
+}
+.order-page select{
+  width: 36%;
+  position: absolute;
+  height: 2.4rem;
+  color: #001c58;
+  padding-left: 0.5rem;
+  top: 33%;
+}
+.order-page input::-webkit-input-placeholder{
+        color: #001c58;
+    }
+.order-page input[type="text"],.order-page input[type="number"]{
+  width: 32%;
+  position: absolute;
+  height: 2.2rem;
+  color: #001c58;
+  padding-left: 0.8rem;
+  top: 22%;
+}
+.order-page .name-input{
+  left: 3.1rem;
+}
+.order-page .phone-input{
+  right: 3.1rem;
+}
+.order-page .province-select{
+  left: 3.15rem;
+}
+.order-page .city-select{
+  right: 3.15rem;
+}
+.order-page .dealer-select{
+  top: 45%;
+  right: 0;
+  left: 0;
+  width: 75%;
+  margin: auto;
+}
+.order-page .check{
+  position: absolute;
+  top: 54%;
+  left: 12%;
+  width: 1rem;
+  height: 1rem;
+}
+.order-page .check img{
+  display: none;
+}
+.order-page img.active{
+  display: block;
+}
