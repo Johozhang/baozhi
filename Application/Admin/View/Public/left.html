@@ -1,0 +1,90 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="side-menu">
+            <li class="nav-header">
+
+                <div class="dropdown profile-element"> <span>
+                    <img alt="image" class="img-circle" src="__PUBLIC__/admin/img/profile_small.jpg" />
+                     </span>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                        <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Beaut-zihan</strong>
+                     </span>  <span class="text-muted text-xs block">{$Think.session.admin_usr} <b class="caret"></b></span> </span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li><a data-toggle="modal" href="#modal-form">修改密码</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="javascript:void(0);loginOut()">安全退出</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </li>
+            <li class="active">
+                <a href="#"><i class="fa fa-table"></i> <span class="nav-label">菜单</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li <if condition="$Think.session.admin_curpage eq 'admin'">class="active"</if> ><a href="__ROOT__/index.php?s=admin&a=admin">排行列表</a></li>
+
+                 </ul>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+
+
+<div id="modal-form" class="modal fade" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12 b-r">
+                        <form method="post" role="form" action="__ROOT__/index.php?s=admin&a=saveUserInfo">
+							<input type="hidden" name="witch" value="modifypwd" />
+                            <div class="form-group">
+                                <label>原密码：</label>
+                                <input type="password" name="oldpwd" placeholder="请输入原密码" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>新密码：</label>
+                                <input type="password" name="newpwd" placeholder="请输入新密码" class="form-control">
+                            </div>
+							<div class="form-group">
+                                <label>重复新密码：</label>
+                                <input type="password" name="newpassword" placeholder="请输入新密码" class="form-control">
+                            </div>
+                            <div>
+                                <button class="btn btn-sm btn-primary pull-left m-t-n-xs" type="submit"><strong>确认</strong> </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+function loginOut(){
+
+
+    swal({
+        title: "您确定要退出吗?",
+        text: "",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "退出",
+        closeOnConfirm: false
+    }, function () {
+        location.href="__ROOT__/index.php?s=admin&a=out";
+
+    });
+
+}
+
+</script>

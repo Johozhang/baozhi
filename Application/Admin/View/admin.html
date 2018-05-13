@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="renderer" content="webkit">
+
+    <title>后台管理系统</title>
+    <link href="__PUBLIC__/admin/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="__PUBLIC__/admin/css/bootstrap.min.css?v=3.4.0" rel="stylesheet">
+    <link href="__PUBLIC__/admin/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="__PUBLIC__/admin/css/animate.css" rel="stylesheet">
+    <link href="__PUBLIC__/admin/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <link href="__PUBLIC__/admin/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <link href="__PUBLIC__/admin/css/style.css?v=2.2.0" rel="stylesheet">
+    
+    <style type="text/css">
+        html{overflow-y: auto;}
+        .red{color: red;font-weight: bold;}
+        .green{color: green;font-weight: bold;}
+        .orange{color: orange;font-weight: bold;}
+
+        .current{background-color:rgba(0,255,150,0.5);}
+        .prev,.num,.next,.current{width:auto;height:auto;margin:4px;padding:1px 2px;box-shadow:0 0 2px rgba(0,0,0,0.2);background-color:rgba(255,255,255,0.1);}
+        table{font-size: 12px;}
+
+        .modify{display: none; width: 100%;background:rgba(0,0,0,0.8);position: absolute;left: 0;top: 0;z-index: 100;font-weight: bold;display: none;height: 100%;}
+        .btnbox{width: 100%;text-align: center;}
+        .xy50{position: absolute;left: 50%;top: 50%;-webkit-transform:translate(-50%,-50%); }
+        .inputbox{width: 500px;margin: 0 auto;color: #CCCCCC;padding: 50px 0;}
+        .inputbox input, select{color: #000000;}
+        .btnbox button{width: 30%;display: inline-block;margin: 0 45px;padding: 5px;background-color: #1ab394;color: #FFFFFF;}
+        .auditbox{width: 100%;height: 100%;position: absolute;left: 0;top: 0;z-index: 9;background:rgba(0,0,0,0.8);font-size: 18px;display: none;}
+        .auditbox >div{width: 500px;margin: 0 auto;padding:20px;background: #ffffff;border-radius: 5px;}
+        .checkbox{display: inline-block;pointer-events: none;}
+        .send_btn,.cancel_btn{font-size: 18px;display: block;margin: 10px;}
+
+        .imgs{cursor: pointer;}
+        .big-img-box{width: 500px;position: fixed;left: 0;bottom: 0;z-index: 10;cursor: pointer;}
+        .big-img-box img{width: 100%;}
+
+        .loadings{ position: absolute; width: 100%;  height: 100%;  left: 0;  top: 0; background: rgba(0,0,0,0.8);  z-index: 3000;display: none; }
+        .loadings div{width: 180px; height: 180px; position: absolute; left: 50%; top: 50%; margin: -90px 0 0 -90px;background: url(__PUBLIC__/img/loading.png) no-repeat center center; background-size: contain; -webkit-animation: rotate 2s linear 0s infinite;}
+        @-webkit-keyframes rotate {
+            0% { -webkit-transform: rotate(0deg);}
+            100% {   -webkit-transform: rotate(359deg);}
+        }
+    </style>
+</head>
+
+<body>
+<div id="wrapper">
+    <include file="./Public/left" />
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-sm-4">
+                <h2>排行列表</h2>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>排行列表</h5>
+                            <h5>&nbsp;&nbsp;&nbsp;&nbsp;<a href="?s=admin&a=excel" class="excel">下载Excel</a></h5>
+                            <form method="get" action="">
+                                <input type="hidden" name="s" value="admin">
+                                <input type="hidden" name="a" value="admin">
+                                <div style="float: right;">
+                                    按什么排序：
+                                    <select name="state">
+                                        <option value="num" <if condition="$Think.get.state eq 'num'">selected="selected"</if> >点赞数</option>
+                                        <option value="add_time" <if condition="$Think.get.state eq 'add_time'">selected="selected"</if> >参与时间</option>
+                                    </select>
+
+                                    <button type="submit" style="margin-left: 10px;">搜索</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="ibox-content">
+                            <table class="table table-hover">
+                                <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>openid</th>
+                                    <th>用户填写ID</th>
+                                    <th>电话</th>
+                                    <th>作品</th>
+                                    <th>点赞数</th>
+                                    <th>时间</th>
+                                    <th>IP</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <volist id="list" name="list" >
+                                        <tr>
+                                            <th>{$list['id']}</th>
+                                            <td>{$list['openid']}</td>
+                                            <td>{$list['uid']}</td>
+                                            <td>{$list['tel']}</td>
+                                            <td><img src="__PUBLIC__/upload/{$list['imgurl']}" width="150"></td>
+                                            <td>{$list['num']}</td>
+                                            <td>{$list['add_time']}</td>
+                                            <td>{$list['ip']}</td>
+                                            <td><a href="?s=admin&a=del&id={$list['id']}">删除</a></td>
+                                        </tr>
+                                    </volist>
+                                </tbody>
+                            </table>
+                            <div style="text-align: center">{$page}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="loadings"><div></div></div>
+
+<!-- Mainly scripts -->
+<script src="__PUBLIC__/admin/js/jquery-2.1.1.min.js"></script>
+<script src="__PUBLIC__/admin/js/bootstrap.min.js?v=3.4.0"></script>
+<script src="__PUBLIC__/admin/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="__PUBLIC__/admin/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="__PUBLIC__/js/jquery.cookie.js"></script>
+<!-- Custom and plugin javascript -->
+<script src="__PUBLIC__/admin/js/hplus.js?v=2.2.0"></script>
+<script src="__PUBLIC__/admin/js/plugins/pace/pace.min.js"></script>
+<script src="__PUBLIC__/admin/js/plugins/sweetalert/sweetalert.min.js"></script>
+<script src="__PUBLIC__/admin/js/plugins/iCheck/icheck.min.js"></script>
+<script src="__PUBLIC__/admin/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
+</body>
+
+</html>
