@@ -7,28 +7,28 @@ use Think\Controller;
 class IndexController extends Controller{
     public function index(){
 
-        // if(!cookie("dongfengOpenid")){
-        //     $id = I("get.id");
-        //     if($id){
-        //         $redirect = "http://www.nice-idea.cn/2018/dongfeng-peugeot/0421-2018bjautoshow/?id=".$id;
-        //     }else{
-        //         $redirect = "http://www.nice-idea.cn/2018/dongfeng-peugeot/0421-2018bjautoshow/";
-        //     }
+         if(!cookie("dongfengOpenid")){
+             $id = I("get.id");
+             if($id){
+                 $redirect = "http://www.nice-idea.cn/2018/dongfeng-peugeot/0421-2018bjautoshow/?id=".$id;
+             }else{
+                $redirect = "http://www.nice-idea.cn/2018/dongfeng-peugeot/0421-2018bjautoshow/";
+             }
 
-        //     $url = 'http://www.nice-idea.cn/2018/dongfeng-peugeot/0421-2018bjautoshow/index.php?a=auth&redirect='.urlencode($redirect);
-        //     header('Location: '.$url); exit;
-        // }
+            $url = 'http://www.nice-idea.cn/2018/dongfeng-peugeot/0421-2018bjautoshow/index.php?a=auth&redirect='.urlencode($redirect);
+             header('Location: '.$url); exit;
+         }
 
-        // $obj = M("app_name_list");
-        // $id = I("get.id");
-        // $list = $obj->field("id,num,imgurl")->where(array("id"=>$id))->find();
-
-        // $this->assign("list", $list);
-        // //获取图片文件夹里的路径文件名
-        // $dir = "Public/img/";
-        // $fileList = getFile($dir);
-        // $this->assign("resJson", json_encode($fileList));
-        $this->display('./index');
+//       $obj = M("app_name_list");
+//       $id = I("get.id");
+//       $list = $obj->field("id,num,imgurl")->where(array("id"=>$id))->find();
+//
+//       $this->assign("list", $list);
+//       //获取图片文件夹里的路径文件名
+//       $dir = "Public/img/";
+//      $fileList = getFile($dir);
+//     $this->assign("resJson", json_encode($fileList));
+//      $this->display('./index');
     }
 
     public function openid(){
