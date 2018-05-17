@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>qiche</name>
+	<name>2008mapping</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -16,25 +16,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1526201448058</id>
-			<name></name>
-			<type>26</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-node_modules</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>1526204460994</id>
-			<name></name>
-			<type>26</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-node_modules</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>1526204515409</id>
+			<id>1526221021777</id>
 			<name></name>
 			<type>26</type>
 			<matcher>

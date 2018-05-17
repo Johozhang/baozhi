@@ -1,63 +1,95 @@
 // swiper初始化
 	function swiperInit(){
+		var bool = false;
 		var swiperV = new Swiper('.swiper-container-v', {
 			direction: 'vertical',
 			on:{
 				init: function(){
 					swiperAnimateCache(this); //隐藏动画元素 
 					swiperAnimate(this); //初始化完成开始动画
-				}, 
-				slideChangeTransitionEnd: function(){ 
-					swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
-				} 
+				}
 			}
 		});
-		var swiperScrollbar = new Swiper('.swiper-container-scrollbar', {
-			watchOverflow: true,
-			scrollbar: '.swiper-container-scrollbar .swiper-scrollbar',
-			direction: 'vertical',
-			slidesPerView: 'auto',
-			freeMode: true,
-			nested: true,
-		});
 
-		$(".swiper-container-scrollbar .swiper-slide").on("touchmove",function() {
+		swiperV.on('slideChangeTransitionEnd', function () { 
+			if (bool) {return};
+			if(swiperV.activeIndex == 1){
+				bool = true;
+				var swiperScrollbar = new Swiper('.swiper-container-scrollbar', {
+					watchOverflow: true,
+					scrollbar: '.swiper-container-scrollbar .swiper-scrollbar',
+					direction: 'vertical',
+					slidesPerView: 'auto',
+					freeMode: true,
+					nested: true,
+					freeModeMomentum: false,
+					freeModeMomentumBounce: false,
+					freeModeMinimumVelocity : 1,
+					on:{
+						init: function(){
+							swiperAnimateCache(this); //隐藏动画元素 
+							swiperAnimate(this); //初始化完成开始动画
+						}
+					}
+				});
+			};
+			
+		});  
+
+		$(".swiper-container-scrollbar .swiper-slide").on("touchmove",function(e) {
 			var top = -$(this).find(".bg").offset().top ;
 			var bgH = $(this).height();
 			console.log(top/bgH)
-			if (top/bgH>0.07) {
-				$(".swiper-container-scrollbar .model-title").addClass('animated bounceInDown').show();
+			if (top/bgH>0.03) {
+				$(".swiper-container-scrollbar .engine-title").addClass('animated bounceInDown').show();
 			}
-			if (top/bgH>0.12) {
-				$(".swiper-container-scrollbar .grille-word").addClass('animated bounceInLeft').show();
+			if (top/bgH>0.09) {
+				$(".swiper-container-scrollbar .motor").addClass('animated fadeIn').show();
+				$(".swiper-container-scrollbar .motor-word").addClass('animated bounceInRight').show();
 			}
-			if (top/bgH>0.20) {
-				$(".swiper-container-scrollbar .headlight-word").addClass('animated bounceInRight').show();
+			if (top/bgH>0.125) {
+				$(".swiper-container-scrollbar .APS").addClass('animated fadeIn').show();
+				$(".swiper-container-scrollbar .APS-word").addClass('animated bounceInRight').show();
+			}
+			if (top/bgH>0.155) {
+				$(".swiper-container-scrollbar .AS").addClass('animated fadeIn').show();
+				$(".swiper-container-scrollbar .AS-word").addClass('animated bounceInRight').show();
+			}
+			if (top/bgH>0.18) {
+				$(".swiper-container-scrollbar .gearbox").addClass('animated fadeIn').show();
+				$(".swiper-container-scrollbar .gearbox-word").addClass('animated bounceInLeft').show();
 			}
 			if (top/bgH>0.24) {
-				$(".swiper-container-scrollbar .taillight-word").addClass('animated bounceInLeft').show();
+				$(".swiper-container-scrollbar .model-title").addClass('animated bounceInDown').show();
 			}
-			if (top/bgH>0.30) {
+			if (top/bgH>0.31) {
+				$(".swiper-container-scrollbar .dw").addClass('animated fadeIn').show();
+				$(".swiper-container-scrollbar .headlight-word").addClass('animated bounceInRight').show();
+				$(".swiper-container-scrollbar .grille-word").addClass('animated bounceInRight').show();
+			}
+			if (top/bgH>0.38) {
+				$(".swiper-container-scrollbar .up").addClass('animated fadeIn').show();
 				$(".swiper-container-scrollbar .rack-word").addClass('animated bounceInRight').show();
+				$(".swiper-container-scrollbar .taillight-word").addClass('animated bounceInDown').show();
+				$(".swiper-container-scrollbar .hub-word").addClass('animated bounceInLeft').show();	
 			}
-			if (top/bgH>0.34) {
-				$(".swiper-container-scrollbar .hub-word").addClass('animated bounceInLeft').show();
-			}
-			if (top/bgH>0.40) {
+			if (top/bgH>0.44) {
 				$(".swiper-container-scrollbar .tent-title").addClass('animated bounceInDown').show();
 			}
-			if (top/bgH>0.47) {
+			if (top/bgH>0.48) {
+				$(".swiper-container-scrollbar .atmosphere").addClass('animated fadeIn').show();
 				$(".swiper-container-scrollbar .atmosphere-word").addClass('animated bounceInRight').show();
 			}
-			if (top/bgH>0.53) {
+			if (top/bgH>0.52) {
+				$(".swiper-container-scrollbar .sunshade").addClass('animated fadeIn').show();
 				$(".swiper-container-scrollbar .sunshade-word").addClass('animated bounceInLeft').show();
 			}
 			if (top/bgH>0.59) {
+				$(".swiper-container-scrollbar .skylight").addClass('animated fadeIn').show();
 				$(".swiper-container-scrollbar .skylight-word").addClass('animated bounceInRight').show();
 			}
-			if (top/bgH>0.69) {
-				$(".swiper-container-scrollbar .down-payment").addClass('animated swing').show();
-				$(".swiper-container-scrollbar .day-payment").addClass('animated flash').show();
+			if (top/bgH>0.64) {
+				$(".swiper-container-scrollbar .sales").addClass('animated swing').show();
 			}
 		});
 		$("#next_btn").on("click",function(){
@@ -117,4 +149,8 @@
 		$("#order_page .bg").on("click",function(e){
 			e.preventDefault();
 		});
+		var Media=$("video").get(0);
+		console.log(Media)
+    	Media.play();
+    	Media.loop; 
 	})
